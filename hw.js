@@ -139,17 +139,16 @@ async function res(){
 }
 res();
 
-
 //task10
-function delay(ms){
+function delay(word,ms){
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve("hiiiii");
+            resolve(word);
         },ms)
     });
 }
 async function delayedMessage(){
-    const result = await delay(2000)
+    const result = await delay("hi",2000)
     console.log(result);
 }
 
