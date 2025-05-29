@@ -1,4 +1,5 @@
 //task1
+
 fetch('https://jsonplaceholder.typicode.com/posts/1')
     .then(a => a.json())
     .then(b => {
@@ -11,7 +12,7 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
 //task2
 fetch('https://jsonplaceholder.typicode.com/posts',{
     method:'POST',
-    heasers: {
+    headers: {
         'Content-Type': 'application/json'
     },
     body: JSON.stringify({
@@ -52,6 +53,13 @@ fetch('https://jsonplaceholder.typicode.com/posts/1',{
 .then(response => response.json())
 .then(res => console.log("Успешное изменение",res))
 .catch(error => console.error("Error",error));
+
+fetch('https://jsonplaceholder.typicode.com/posts/1',{
+    method: 'DELETE',
+})
+.then(response => response.json())
+.then(res => console.log('post is deleted'))
+.catch(error => console.error('error',error));
 
 //task5
 async function wow(){
